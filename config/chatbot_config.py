@@ -3,17 +3,17 @@ from typing import Dict, List
 # Role-based access control for different user types
 ROLE_PERMISSIONS = {
     'patient': {
-        'allowed_tables': ['appointments', 'doctor', 'department', 'avalibility', 'person'],
+        'allowed_tables': ['appointments', 'doctor', 'department', 'avalibility', 'person','patient'],
         'allowed_operations': ['SELECT'],
         'restricted_fields': ['password', 'contact_info', 'address']
     },
     'staff': {
-        'allowed_tables': ['appointments', 'doctor', 'department', 'avalibility', 'inventory', 'medical_records','person'],
+        'allowed_tables': ['appointments', 'doctor', 'department', 'avalibility', 'inventory', 'medical_records','person','patient'],
         'allowed_operations': ['SELECT', 'INSERT', 'UPDATE'],
         'restricted_fields': ['password']
     },
     'doctor': {
-        'allowed_tables': ['appointments', 'doctor', 'department', 'avalibility', 'medical_records','person'],
+        'allowed_tables': ['appointments', 'doctor', 'department', 'avalibility', 'medical_records','person','patient'],
         'allowed_operations': ['SELECT', 'INSERT', 'UPDATE'],
         'restricted_fields': ['password']
     }
